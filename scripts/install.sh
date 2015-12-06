@@ -14,7 +14,10 @@ cp $SRCDIR/../etc/dhcp/dhcpd6.conf /etc/dhcp
 chmod 644 /etc/dhcp/dhcpd6.conf
 chown root:root /etc/dhcp/dhcpd6.conf
 
-if [ -f /var/lib/dhcp ]; then
+if [ -e /var/lib/dhcp ]; then
+    # do nothing
+    cd .
+else
     echo 'mkdir /var/lib/dhcp'
     mkdir /var/lib/dhcp
 fi
